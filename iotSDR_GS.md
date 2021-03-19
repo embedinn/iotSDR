@@ -1,12 +1,14 @@
 # iotSDR Getting Started Guide
 
-## Prerequisites
+As you got your iotSDR, this small guide will help you setup your board to get started with the jupyter notebook
 
-        iotSDR-7010 ot 7020 board
-        Computer with compatible browser (Supported Browsers)
-        Ethernet cable
-        Micro USB cable
-        Micro-SD card with preloaded image, or blank card (Minimum 8GB recommended)
+## Pre-requisites
+
+        1. iotSDR-7010 ot 7020 board
+        2. Computer with compatible browser (Supported Browsers)
+        3. Ethernet cable
+        4. Micro USB cable
+        5. Micro-SD card with preloaded image, or blank card (Minimum 8GB recommended)
 
 
 ## Board Setup
