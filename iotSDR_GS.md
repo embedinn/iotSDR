@@ -40,7 +40,8 @@ After a minute you should see Green LEDs flash simultaneously. The system is now
 
             Assign your computer a static IP address from the pool of 192.168.2.xx
             Connect the board to your computer’s Ethernet port 
-            Browse to http://192.168.2.99
+            Browse or ping to http://192.168.2.99 to confirm that you are connected
 
         The board currently have a fixed IP address mode. If you want to connect the board to a router, or a network with a DHCP server, you may follow 
 
+Once the board is connected to host, the jupyter notbook can be accessed though browswer, for which a comprehensive guide can be found on the [PYNQ Website](https://pynq.readthedocs.io/en/v2.3/jupyter_notebooks.html)
