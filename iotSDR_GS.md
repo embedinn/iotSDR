@@ -9,7 +9,7 @@ As you got your iotSDR, this small guide will help you setup your board to get s
         3. Ethernet cable
         4. Micro USB cable
         5. Micro-SD card with preloaded image, or blank card (Minimum 8GB recommended)
-
+if you don't have Micro-SD card with image loaded, you can find the detailed instructions [here](https://github.com/embedinn/iotSDR/blob/master/iotSDR_uSD_Card.md)
 
 ## Board Setup
 
