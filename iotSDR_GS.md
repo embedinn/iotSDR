@@ -13,7 +13,8 @@ As you got your iotSDR, this small guide will help you setup your board to get s
 
 ## Board Setup
 
-        .. 
+        ![image](https://user-images.githubusercontent.com/11763512/112713740-7d4a7f80-8ef8-11eb-90dc-c012d78781d4.png)
+ 
 
         Set the ** Boot** jumper to the SD position. (This sets the board to boot from the Micro-SD card)
         Insert the Micro SD card loaded with the image into the Micro SD card slot underneath the board
@@ -35,17 +36,9 @@ After a minute you should see Green LEDs flash simultaneously. The system is now
 
     Connect directly to a computer (Static IP):
 
-            Assign your computer a static IP address
-            Connect the board to your computer’s Ethernet port
+            Assign your computer a static IP address from the pool of 192.168.2.xx
+            Connect the board to your computer’s Ethernet port 
             Browse to http://192.168.2.99
 
-    If you connect to a router, or a network with a DHCP server, your board will automatically get an IP address. You must make sure you have permission to connect a device to your network, otherwise the board may not connect properly.
-
-    Connect to a Router/Network (DHCP):
-
-            Connect the Ethernet port on your board to a router/switch
-            Connect your computer to Ethernet or WiFi on the router/switch
-            Browse to http://<board IP address>
-            Optional: Change the Hostname
-            Optional: Configure Proxy Settings
+        The board currently have a fixed IP address mode. If you want to connect the board to a router, or a network with a DHCP server, you may follow 
 
