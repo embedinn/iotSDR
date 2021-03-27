@@ -13,10 +13,12 @@ As you got your iotSDR, this small guide will help you setup your board to get s
 
 ## Board Setup
 
-        ![image](https://user-images.githubusercontent.com/11763512/112713740-7d4a7f80-8ef8-11eb-90dc-c012d78781d4.png)
  
 
         Set the ** Boot** jumper to the SD position. (This sets the board to boot from the Micro-SD card)
+
+![image](https://user-images.githubusercontent.com/11763512/112713740-7d4a7f80-8ef8-11eb-90dc-c012d78781d4.png)
+
         Insert the Micro SD card loaded with the image into the Micro SD card slot underneath the board
         Connect the Ethernet port by following the instructions below
         Connect the USB cable to your PC/Laptop, and to the PWR + UART MicroUSB port on the board
