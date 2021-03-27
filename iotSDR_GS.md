@@ -5,7 +5,7 @@ As you got your iotSDR, this small guide will help you setup your board to get s
 ## Pre-requisites
 
         1. iotSDR-7010 ot 7020 board
-        2. Computer with compatible browser (Supported Browsers)
+        2. Computer with a latest browser
         3. Ethernet cable
         4. Micro USB cable
         5. Micro-SD card with preloaded image, or blank card (Minimum 16GB recommended)
