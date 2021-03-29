@@ -1,0 +1,57 @@
+id: iotSDR_iotSDR_Source
+label: iotSDR Source
+category: '[iotSDR]'
+
+templates:
+   imports: import iotSDR
+   #imports: import iotSDR_Remote
+   make: iotSDR.iotSDR_Source(${URL}, ${Rx_Channel}, ${frequency}, ${sample_rate}, ${bandwidth}, ${agc_mode}, ${buffer_size})
+
+
+parameters:
+- id: URL
+  label: URL
+  dtype: string
+  default: "10.42.0.128:42400"
+
+- id: Rx_Channel
+  label: Receiver Channel
+  dtype: enum
+  default: "'SubGhz_CH_1'"
+  options: ["'SubGhz_CH_1'", "'SubGhz_CH_2'", "'2_4Ghz_CH_1'", "'2_4Ghz_CH_2'"]
+  option_labels: ['SubGhz CH-1', 'SubGhz CH-2', '2.4Ghz CH-1', '2.4Ghz CH-2']
+
+- id: frequency
+  label: LO Frequency (MHz)
+  dtype: float
+  default: 902.2
+
+- id: sample_rate
+  label: Sample Rate
+  dtype: int
+  default: 2000000
+
+- id: bandwidth
+  label: RF Bandwidth
+  dtype: int
+  default: 4000000
+
+- id: agc_mode
+  label: AGC Mode
+  dtype: bool
+  default: 'True'
+  options: ['False', 'True']
+  option_labels: ['Disable', 'Enable']
+
+- id: buffer_size
+  label: Buffer size
+  dtype: int
+  default: 1024
+
+
+outputs:
+- label: out
+  dtype: complex
+
+
+file_format: 1

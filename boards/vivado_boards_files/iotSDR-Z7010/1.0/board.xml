@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<board schema_version="2.0" vendor="EMBEDINN" name="iot_7010" display_name="iotSDR" url="http://www.embedinn.org" preset_file="preset.xml" >
+ <images>
+    <image name="iot_SDR.jpg" display_name="iotSDR" sub_type="board">
+      <description>iotSDTtest Image File</description>
+    </image>
+  </images>
+<compatible_board_revisions>
+  <revision id="0">g</revision>
+</compatible_board_revisions>
+<file_version>1.2</file_version>
+<description>iotSDTtest</description>
+<components>
+  <component name="part0" display_name="iotSDTtest" type="fpga" part_name="xc7z010clg400-1" pin_map_file="part0_pins.xml" vendor="xilinx.com" spec_url="http://www.embedinn.org">
+    <interfaces>
+      <interface mode="master" name="leds_6bits" type="xilinx.com:interface:gpio_rtl:1.0" of_component="leds_6bits" preset_proc="led_6bits_preset">
+        <port_maps>
+          <port_map logical_port="TRI_O" physical_port="leds_6bits_tri_o" dir="out" left="5" right="0"> 
+            <pin_maps>
+              <pin_map port_index="0" component_pin="leds_6bits_tri_o_0"/> 
+              <pin_map port_index="1" component_pin="leds_6bits_tri_o_1"/> 
+              <pin_map port_index="2" component_pin="leds_6bits_tri_o_2"/> 
+              <pin_map port_index="3" component_pin="leds_6bits_tri_o_3"/> 
+ 	      <pin_map port_index="4" component_pin="leds_6bits_tri_o_4"/> 
+ 	      <pin_map port_index="5" component_pin="leds_6bits_tri_o_5"/> 
+            </pin_maps>
+          </port_map>
+        </port_maps>
+      </interface>
+      <interface mode="master" name="ps7_fixedio" type="xilinx.com:display_processing_system7:fixedio_rtl:1.0" of_component="ps7_fixedio" preset_proc="ps7_preset"> 
+      </interface>
+      <interface mode="master" name="at2_spi" type="xilinx.com:interface:spi_rtl:1.0" of_component="at2_spi" preset_proc="at2_spi_preset">
+        <preferred_ips>
+			<preferred_ip vendor="xilinx.com" library="ip" name="axi_quad_spi" order="0"/>
+		</preferred_ips>
+		<port_maps>
+          <port_map logical_port="IO0_I" physical_port="at2_spi_mosi_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO0_O" physical_port="at2_spi_mosi_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO0_T" physical_port="at2_spi_mosi_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_I" physical_port="at2_spi_miso_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_O" physical_port="at2_spi_miso_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_T" physical_port="at2_spi_miso_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_I" physical_port="at2_spi_sclk_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_O" physical_port="at2_spi_sclk_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_T" physical_port="at2_spi_sclk_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_I" physical_port="at2_spi_ss_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_O" physical_port="at2_spi_ss_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_T" physical_port="at2_spi_ss_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at2_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+        </port_maps>
+      </interface>
+
+
+
+
+
+      <interface mode="master" name="i2c" type="xilinx.com:interface:iic_rtl:1.0" of_component="i2c">
+        <description>Shield I2C</description>
+		<preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_iic" order="0"/>
+        </preferred_ips>
+		<port_maps>
+          <port_map logical_port="SDA_I" physical_port="i2c_sda_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="i2c_sda_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SDA_O" physical_port="i2c_sda_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="i2c_sda_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SDA_T" physical_port="i2c_sda_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="i2c_sda_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCL_I" physical_port="i2c_scl_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="i2c_scl_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCL_O" physical_port="i2c_scl_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="i2c_scl_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCL_T" physical_port="i2c_scl_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="i2c_scl_i"/> 
+            </pin_maps>
+          </port_map>
+        </port_maps>
+      </interface>
+
+      <interface mode="master" name="at1_spi" type="xilinx.com:interface:spi_rtl:1.0" of_component="at1_spi" preset_proc="at1_spi_preset">
+        <preferred_ips>
+			<preferred_ip vendor="xilinx.com" library="ip" name="axi_quad_spi" order="0"/>
+		</preferred_ips>
+		<port_maps>
+          <port_map logical_port="IO0_I" physical_port="at1_spi_mosi_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO0_O" physical_port="at1_spi_mosi_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO0_T" physical_port="at1_spi_mosi_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_I" physical_port="at1_spi_miso_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_O" physical_port="at1_spi_miso_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_T" physical_port="at1_spi_miso_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_I" physical_port="at1_spi_sclk_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_O" physical_port="at1_spi_sclk_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_T" physical_port="at1_spi_sclk_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_I" physical_port="at1_spi_ss_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_O" physical_port="at1_spi_ss_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_T" physical_port="at1_spi_ss_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="at1_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+        </port_maps>
+      </interface>  
+      <interface mode="master" name="pmod1_8bit" type="xilinx.com:interface:gpio_rtl:1.0" of_component="pmod1_8bit" preset_proc="pmod1_8bit_preset">
+          <description>E1 connector GPIO[7:0] = {ext_p[7:0]} </description>
+          <parameters></parameters>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0"/>
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="TRI_I" physical_port="GPIO_I" dir="in" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0"  component_pin="exp_p_io[0]"/>
+                <pin_map port_index="1"  component_pin="exp_p_io[1]"/>
+                <pin_map port_index="2"  component_pin="exp_p_io[2]"/>
+                <pin_map port_index="3"  component_pin="exp_p_io[3]"/>
+                <pin_map port_index="4"  component_pin="exp_p_io[4]"/>
+                <pin_map port_index="5"  component_pin="exp_p_io[5]"/>
+                <pin_map port_index="6"  component_pin="exp_p_io[6]"/>
+                <pin_map port_index="7"  component_pin="exp_p_io[7]"/>
+                </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_O" physical_port="GPIO_O" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0"  component_pin="exp_p_io[0]"/>
+                <pin_map port_index="1"  component_pin="exp_p_io[1]"/>
+                <pin_map port_index="2"  component_pin="exp_p_io[2]"/>
+                <pin_map port_index="3"  component_pin="exp_p_io[3]"/>
+                <pin_map port_index="4"  component_pin="exp_p_io[4]"/>
+                <pin_map port_index="5"  component_pin="exp_p_io[5]"/>
+                <pin_map port_index="6"  component_pin="exp_p_io[6]"/>
+                <pin_map port_index="7"  component_pin="exp_p_io[7]"/>
+                </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_T" physical_port="GPIO_T" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0"  component_pin="exp_p_io[0]"/>
+                <pin_map port_index="1"  component_pin="exp_p_io[1]"/>
+                <pin_map port_index="2"  component_pin="exp_p_io[2]"/>
+                <pin_map port_index="3"  component_pin="exp_p_io[3]"/>
+                <pin_map port_index="4"  component_pin="exp_p_io[4]"/>
+                <pin_map port_index="5"  component_pin="exp_p_io[5]"/>
+                <pin_map port_index="6"  component_pin="exp_p_io[6]"/>
+                <pin_map port_index="7"  component_pin="exp_p_io[7]"/>
+                </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+
+<interface mode="master" name="pmod2_8bit" type="xilinx.com:interface:gpio_rtl:1.0" of_component="pmod2_8bit" preset_proc="pmod2_8bit_preset">
+          <description>E2 connector GPIO2[7:0] = {ext_p2[7:0]} </description>
+          <parameters></parameters>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio2" order="1"/>
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="TRI_I" physical_port="GPIO2_I" dir="in" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0"  component_pin="pin[0]"/>
+                <pin_map port_index="1"  component_pin="pin[1]"/>
+                <pin_map port_index="2"  component_pin="pin[2]"/>
+                <pin_map port_index="3"  component_pin="pin[3]"/>
+                <pin_map port_index="4"  component_pin="pin[4]"/>
+                <pin_map port_index="5"  component_pin="pin[5]"/>
+                <pin_map port_index="6"  component_pin="pin[6]"/>
+                <pin_map port_index="7"  component_pin="pin[7]"/>
+                </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_O" physical_port="GPIO2_O" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0"  component_pin="pin[0]"/>
+                <pin_map port_index="1"  component_pin="pin[1]"/>
+                <pin_map port_index="2"  component_pin="pin[2]"/>
+                <pin_map port_index="3"  component_pin="pin[3]"/>
+                <pin_map port_index="4"  component_pin="pin[4]"/>
+                <pin_map port_index="5"  component_pin="pin[5]"/>
+                <pin_map port_index="6"  component_pin="pin[6]"/>
+                <pin_map port_index="7"  component_pin="pin[7]"/>
+                </pin_maps>
+            </port_map>
+            <port_map logical_port="TRI_T" physical_port="GPIO2_T" dir="out" left="7" right="0">
+              <pin_maps>
+                <pin_map port_index="0"  component_pin="pin[0]"/>
+                <pin_map port_index="1"  component_pin="pin[1]"/>
+                <pin_map port_index="2"  component_pin="pin[2]"/>
+                <pin_map port_index="3"  component_pin="pin[3]"/>
+                <pin_map port_index="4"  component_pin="pin[4]"/>
+                <pin_map port_index="5"  component_pin="pin[5]"/>
+                <pin_map port_index="6"  component_pin="pin[6]"/>
+                <pin_map port_index="7"  component_pin="pin[7]"/>
+                </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+
+
+      <interface mode="master" name="gps_spi" type="xilinx.com:interface:spi_rtl:1.0" of_component="gps_spi" preset_proc="gps_spi_preset">
+        <preferred_ips>
+			<preferred_ip vendor="xilinx.com" library="ip" name="axi_quad_spi" order="0"/>
+		</preferred_ips>
+		<port_maps>
+          <port_map logical_port="IO0_I" physical_port="gps_spi_mosi_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO0_O" physical_port="gps_spi_mosi_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO0_T" physical_port="gps_spi_mosi_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_mosi_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_I" physical_port="gps_spi_miso_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_O" physical_port="gps_spi_miso_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="IO1_T" physical_port="gps_spi_miso_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_miso_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_I" physical_port="gps_spi_sclk_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_O" physical_port="gps_spi_sclk_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SCK_T" physical_port="gps_spi_sclk_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_sclk_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_I" physical_port="gps_spi_ss_i" dir="in">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_O" physical_port="gps_spi_ss_o" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+          <port_map logical_port="SS_T" physical_port="gps_spi_ss_t" dir="out">
+            <pin_maps>
+              <pin_map port_index="0" component_pin="gps_spi_ss_i"/> 
+            </pin_maps>
+          </port_map>
+        </port_maps>
+      </interface>
+     </interfaces>
+    </component>
+
+
+   
+
+  <component name="leds_6bits" display_name="LEDs" type="chip" sub_type="led" major_group="GPIO">
+	<description>LEDs 5 to 0</description>
+  </component>
+  <component name="ps7_fixedio" display_name="ps7_fixedio" type="chip" sub_type="fixed_io" major_group=""/>
+
+  <component name="at2_spi" display_name="AT2 SPI" type="chip" sub_type="mux" major_group="SPI">
+  	<description>Shield SPI1</description>
+  </component>
+
+ <component name="i2c" display_name="EEPROM I2C" type="chip" sub_type="mux" major_group="I2C">
+  <description>Shield i2c</description>
+  </component>
+
+ <component name="at1_spi" display_name="AT1 SPI" type="chip" sub_type="mux" major_group="SPI">
+  	<description>Shield SPI2</description>
+  </component>
+
+  <component name="pmod1_8bit" display_name="PL_PMOD1" type="chip" sub_type="led" major_group="GPIO">
+      <description>GPIO, 7 to 0</description>
+    </component>
+
+  <component name="pmod2_8bit" display_name="PL_PMOD2" type="chip" sub_type="led" major_group="GPIO">
+      <description>GPIO, 7 to 0</description>
+    </component>
+
+ <component name="gps_spi" display_name="GNSS SPI " type="chip" sub_type="mux" major_group="SPI">
+  	<description>Shield SPI2</description>
+  </component>
+
+
+
+
+ 
+
+</components>
+<jtag_chains>
+  <jtag_chain name="chain1">
+    <position name="0" component="part0"/>
+  </jtag_chain>
+</jtag_chains>
+
+
+<connections>
+ 
+  <connection name="part0_leds_6bits" component1="part0" component2="leds_6bits">
+    <connection_map name="part0_leds_6bits_1" c1_st_index="0" c1_end_index="5" c2_st_index="0" c2_end_index="5"/>
+  </connection>
+
+  <connection name="part0_spi" component1="part0" component2="at2_spi">
+    <connection_map name="part0_spi_1" c1_st_index="6" c1_end_index="9" c2_st_index="0" c2_end_index="3"/>
+  </connection>
+<connection name="part0_spi" component1="part0" component2="at1_spi">
+    <connection_map name="part0_spi_2" c1_st_index="10" c1_end_index="13" c2_st_index="0" c2_end_index="3"/>
+
+  <connection name="part0_i2c" component1="part0" component2="i2c">
+    <connection_map name="part0_i2c_1" c1_st_index="18" c1_end_index="19" c2_st_index="0" c2_end_index="1"/>
+	</connection>
+  </connection>
+<connection name="part0_spi" component1="part0" component2="gps_spi">
+    <connection_map name="part0_spi_2" c1_st_index="14" c1_end_index="17" c2_st_index="0" c2_end_index="3"/>
+  </connection>
+
+  <connection name="part0_pmod1_8bit" component1="part0" component2="pmod1_8bit">
+      <connection_map name="part0_pmod1_8bit_1" c1_st_index="20" c1_end_index="27" c2_st_index="0" c2_end_index="7"/>
+    </connection>
+
+
+  <connection name="part0_pmod2_8bit" component1="part0" component2="pmod2_8bit">
+      <connection_map name="part0_pmod2_8bit_1" c1_st_index="28" c1_end_index="35" c2_st_index="0" c2_end_index="7"/>
+    </connection>
+</connections>
+</board>

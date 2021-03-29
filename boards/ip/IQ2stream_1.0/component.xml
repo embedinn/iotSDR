@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>user.org</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>IQ2stream</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>M00_AXIS</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_tstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_tlast</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.M00_AXIS.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M00_AXIS_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M00_AXIS_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>M00_AXIS_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>m00_axis_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M00_AXIS_CLK.ASSOCIATED_BUSIF">M00_AXIS</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M00_AXIS_CLK.ASSOCIATED_RESET">m00_axis_aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
+        <spirit:displayName>VHDL Synthesis</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>IQ2stream_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>c8a8f775</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlbehavioralsimulation</spirit:name>
+        <spirit:displayName>VHDL Simulation</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>IQ2stream_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>c8a8f775</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>385675ae</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>45a2f450</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>enable_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>IQ_sample_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>valid_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tlast_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sample_no</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>samplesPerBlock</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M00_AXIS_TDATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_tstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M00_AXIS_TDATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_tlast</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>m00_axis_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_M00_AXIS_TDATA_WIDTH</spirit:name>
+        <spirit:displayName>C M00 AXIS TDATA WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:order="3" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>SAMPLES_PER_BLOCK</spirit:name>
+        <spirit:displayName>Samples Per Block</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SAMPLES_PER_BLOCK">128</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_6fc15197</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/IQ2stream_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_c8a8f775</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/IQ2stream_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/IQ2stream_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_385675ae</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>stream 32 bit iq samples to axi stream interface</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_M00_AXIS_TDATA_WIDTH</spirit:name>
+      <spirit:displayName>C M00 AXIS TDATA WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_6fc15197" spirit:order="3">32</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_M00_AXIS_TDATA_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">IQ2stream_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SAMPLES_PER_BLOCK</spirit:name>
+      <spirit:displayName>Samples Per Block</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SAMPLES_PER_BLOCK">128</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>IQ2stream_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-03-13T12:14:53Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d2a0082_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48abb32c_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6616b3d0_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fcd0f4_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d6795df_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b806c03_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@770e03bd_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a885e30_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bab8c37_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6062887c_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e2c0bda_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@357f0566_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a38e8bc_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@761ace47_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e0b8895_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6732c5fa_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cc9abe6_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@147aea1f_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75ade25a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72629cc6_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f843804_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d767e0c_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b8155ea_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3607292e_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e29e3f2_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2abefed2_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c8558ff_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38bbdc80_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@540e2e5d_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a6f7eb0_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6571f18a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dac0bb5_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54473751_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f903811_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fe38fb2_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@723d3683_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54b6d46c_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a5c9dc_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26f60f92_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bf39aac_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@523ccd69_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8c4c219_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ceda277_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@488f3cb_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@565c8751_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fd4a88_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@628571f1_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28077256_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a83c4c3_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@716a1478_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@135727f2_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2be2b845_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50cf110a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6941915_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17923eb6_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2923c37a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d313b09_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32a8dbd0_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ff86cc8_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15d0c086_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f6fa1cc_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69b5d281_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32eb260d_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78d3c521_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@629cca44_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f0d7531_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a2a0151_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a98e9dc_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9d3098e_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4be451c6_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c94128f_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7315cf54_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36baeac3_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66751a77_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a20a8ef_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dc7d0ee_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b6cc2d4_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66a91f6f_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@95d5acd_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c9eae14_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@333e903e_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789cabc4_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@538761c0_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@217c155a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f54df97_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@291faf5f_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6285c113_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@181c0a1a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ed5cc25_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a04dccd_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19ff8f4a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@331d3a72_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23f01c7b_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ac5d5d6_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75096305_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@336e9793_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ae7b60e_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@369c4148_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f0618f6_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5364386b_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e9601fb_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@490b7602_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b82569_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74eb599e_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@691a754f_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13a3d3f4_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@80b7daa_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e3a5f5a_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@552d3789_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51f4c66_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6965dcd3_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7750c1ac_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c8de30b_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5059c227_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7534e785_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76889db0_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@575498eb_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bdd7c8b_ARCHIVE_LOCATION">/home/iq/workME/ip_repo/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2107ff76_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f4b25ca_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f8cb7b8_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40196f3f_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7340d0ca_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69b39f60_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a2315c8_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f25c650_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed159e5_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68359035_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39b3a3cb_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e8c368_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44facc9e_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5103d3cd_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@702230aa_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@495c3f80_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cdfc196_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2925b31_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71b20271_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36cc932e_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ce3237_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@392a66dc_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46157f76_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@644b2dd1_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@517eb800_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9b2af19_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68bc7377_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@683ead2e_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23f65a5f_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53b1840_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fa249d9_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49457a5d_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65fcb17f_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24d1080b_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@192710f5_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c815bca_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63570da0_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e49baa6_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67e75902_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e73081e_ARCHIVE_LOCATION">/home/iq/workME/git_iotSDR_Platform/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7903f907_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b41e9db_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2839ad2f_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ee17577_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d0be101_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@342e0a29_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f55b348_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b0a3abd_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40d10ce_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6371c2a1_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c8533ee_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3519d3ad_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46a04003_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@210c3322_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@231f5e7a_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b703e24_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7126fcd3_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f8a7690_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72b91da6_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@612ee584_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@163f02c2_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de8bd76_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ad6c9e4_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@430a159a_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d5a1e4f_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44699afb_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6701ad43_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8af2e85_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1512536c_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6419f6a8_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e97c23e_ARCHIVE_LOCATION">/mnt/IQups/IQups_Projects/embedInn/iotSDR_Platform/boards/ip/IQ2stream_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="8a2a6053"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="40940922"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="365c7803"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="72bcf4a4"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="5ba8c169"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
