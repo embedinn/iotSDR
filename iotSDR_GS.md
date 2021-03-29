@@ -1,19 +1,31 @@
 
 # iotSDR Getting Started Guide
+------------------------------
 
 As you got your iotSDR, this small guide will help you setup your board to get started with the jupyter notebook
 
 ## Pre-requisites
-
+-----------------
         1. iotSDR-7010 or 7020 board
-        2. Computer with compatible browser (Supported Browsers)
+        2. Computer with compatible browser (Google Chrome)
         3. Ethernet cable  (100M or 1G)
-        4. Micro USB data cable or Power Adapter of 5V for Power Jack
-        5. Micro-SD card(class 10) with preloaded image (Minimum 16GB recommended)
-if you don't have Micro-SD card with image loaded, you can find the detailed instructions [here](https://github.com/embedinn/iotSDR/blob/master/iotSDR_uSD_Card.md)
+        4. Micro USB data cable OR Power Adapter of 5V for Power Jack
+        5. Micro-SD card(class 10) with preloaded image (16GB recommended)
+
+## MicroSD Card Setup
+---------------------
+
+To flash iotSDR Micro-SD card folow below steps:
+
+  1. Download the appropriate iotSDR image for your board
+  2. [iotSDR7010](https://bit.ly/2PEP3Y4) [iotSDR7020](https://bit.ly/3cxjA33)
+  4. Use Etcher Utility [Ether](https://www.balena.io/etcher/)
+  5. following the Ether instructions Write the image to a blank Micro SD card (16GB recommended)
+   
+if you are facing issues you can find the detailed instructions [here](https://github.com/embedinn/iotSDR/blob/master/iotSDR_uSD_Card.md)
 
 ## Board Setup
-
+--------------
  
 
         Set the ** Boot** jumper to the SD position. (This sets the board to boot from the Micro-SD card)
