@@ -28,10 +28,9 @@ if you are facing issues you can find the detailed instructions [here](https://g
 --------------
  
 
-        Set the ** Boot** jumper to the SD position. (This sets the board to boot from the Micro-SD card)
+Set the ** Boot** jumper to the SD position. (This sets the board to boot Linux from the Micro-SD card)
 
-![image](https://user-images.githubusercontent.com/11763512/112713740-7d4a7f80-8ef8-11eb-90dc-c012d78781d4.png)
-
+![image](./images/iot.jpg)
         Insert the Micro SD card with respective pre-loaded iotSDR image file into the Micro SD card slot 
         Connect the  Ethernet cable, one end with iotSDR and other with PC
         Connect the USB cable to your PC/Laptop, and to the PWR + UART MicroUSB port 
@@ -39,31 +38,26 @@ if you are facing issues you can find the detailed instructions [here](https://g
         iotSDR Board should now power up and get into boot sequence
 
 ## Running Jupyter On the iotSDR
+--------------------------------
 
-After setting the SD card header position, inserting the SD card with pre-loaded image file, and the USB cable is connected, the green LED will come on immediately to confirm that the board has power. 
+1. After setting the SD card header position, inserting the SD card with pre-loaded image file, and the USB cable is connected, the green LED will come on immediately to confirm that the board has power. Following to that, after few seconds, the Blue / Done LED should light up to show that bit file is loaded in the Zynq® device. After some time The Linux OS will be booted and ready for use.
 
-Following to that, after few seconds, the Blue / Done LED should light up to show that bit file is loaded in the Zynq® device. 
+2. Once board setup up is complete, you can connect your browser to it to start using Jupyter notebook. 
 
-After some time you should see Green LEDs on one side of the board flash simultaneously. The system is now booted and ready for use.
-
-
-    Once board setup up is complete, you can connect your browser to it to start using Jupyter notebook. 
-    
-    Follow the below procedure to configure ethernet connection between Host PC and iotSDR before running Jupyter notebbok on browser
-
-    Connect board with browser (Static IP):
-
-            Assign your computer a static IP address from the pool of 192.168.2.xx (except .99 and .1)
-            Connect the board to your computer’s Ethernet port 
-            ping to http://192.168.2.99 to confirm that you are connected
-            Now open and browse and write 192.168.2.99:9090 in the search bar
-            An enter password window will appear
-            The password is: xilinx
+3. Follow the below procedure to configure ethernet connection between Host PC and iotSDR before running Jupyter notebook on browser
 
 
-        The board currently have a fixed IP address mode.
+        1. Assign your computer a static IP address from the pool of           192.168.2.xx (except .99 and .1)
+        2. Connect the board to your computer’s Ethernet port 
+        3. ping to 192.168.2.99 to confirm that you are connected
+        4. Now open chrome browser and write http://192.168.2.99:9090/lab in the search bar
+        5. Enter password window will appear The password is: xilinx
 
-Once the board is connected to host, the jupyter notbook can be accessed through browser, for which a comprehensive guide can be found on the [PYNQ Website](https://pynq.readthedocs.io/en/v2.3/jupyter_notebooks.html)
+
+Note: By default The board currently have a fixed IP (192.168.2.99) address mode.
+
 
 ## Running Application on Jupyter Notebook
+------------------------------------------
 After the password tab window, two folder of the notebooks on the left of webpage will appear and the files can be accessed and user can run the demo projects.
+![image](./images/demo.png)
