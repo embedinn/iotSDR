@@ -15,12 +15,12 @@ This small guide will help you setup your board to get started with the jupyter 
 ## MicroSD Card Setup
 ---------------------
 
-To flash iotSDR Micro-SD card folow below steps:
+To flash iotSDR Micro-SD card follow the below steps:
 
   1. Download the appropriate iotSDR image for your board
   2. [iotSDR7010](https://bit.ly/2PEP3Y4) [iotSDR7020](https://bit.ly/3cxjA33)
-  4. Use Etcher Utility [Ether](https://www.balena.io/etcher/)
-  5. following the Ether instructions Write the image to a blank Micro SD card (16GB recommended)
+  4. Use Etcher Utility [Etcher](https://www.balena.io/etcher/)
+  5. following the Etcher instructions Write the image to a blank Micro SD card (16GB recommended)
    
 if you are facing issues you can find the detailed instructions [here](https://github.com/embedinn/iotSDR/blob/master/iotSDR_uSD_Card.md)
 
@@ -60,6 +60,7 @@ Note: By default The board currently have a fixed IP (192.168.2.99) address mode
 ## Running Application on Jupyter Notebook
 ------------------------------------------
 After the password tab window, two folder of the notebooks on the left of webpage will appear and the files can be accessed and user can run the demo projects.
+
 ![image](./images/demo.png)
 
 ## Contact Us
