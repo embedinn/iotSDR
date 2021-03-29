@@ -61,3 +61,7 @@ Note: By default The board currently have a fixed IP (192.168.2.99) address mode
 ------------------------------------------
 After the password tab window, two folder of the notebooks on the left of webpage will appear and the files can be accessed and user can run the demo projects.
 ![image](./images/demo.png)
+
+## Contact Us
+-------------
+if you are facing any issues, feel free to contact us at info@embedinn.com
