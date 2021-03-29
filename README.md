@@ -47,7 +47,7 @@ Set the ** Boot** jumper to the SD position. (This sets the board to boot Linux 
 3. Follow the below procedure to configure ethernet connection between Host PC and iotSDR before running Jupyter notebook on browser
 
 
-        1. Assign your computer a static IP address from the pool of           192.168.2.xx (except .99 and .1)
+        1. Assign your computer a static IP address from the pool of 192.168.2.xx (except .99 and .1)
         2. Connect the board to your computer’s Ethernet port 
         3. ping to 192.168.2.99 to confirm that you are connected
         4. Now open chrome browser and write http://192.168.2.99:9090/lab in the search bar
