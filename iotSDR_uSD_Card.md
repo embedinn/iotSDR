@@ -36,7 +36,7 @@ Note the Micro SD card must be formatted as FAT32.
 
     Click on “USB” (or “Card Reader” if using a built-in SD card reader) then search for your SD card in the upper-right section of the window. Click on it, then search for the BSD name in the lower-right section; it will look something like diskn where n is a number (for example, disk4). Make sure you take a note of this number.
 
-    Unmount the partition so that you will be allowed to overwrite the disk. To do this, open Disk Utility and unmount it; do not eject it, or you will have to reconnect it. Note that on Mac OS X 10.8.x Mountain Lion, “Verify Disk” (before unmounting) will display the BSD name as /dev/disk1s1 or similar, allowing you to skip the previous two steps.
+    Un-mount the partition so that you will be allowed to overwrite the disk. To do this, open Disk Utility and unmount it; do not eject it, or you will have to reconnect it. Note that on Mac OS X 10.8.x Mountain Lion, “Verify Disk” (before unmounting) will display the BSD name as /dev/disk1s1 or similar, allowing you to skip the previous two steps.
 
     From the terminal, run the following command:
 
