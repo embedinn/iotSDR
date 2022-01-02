@@ -65,4 +65,4 @@ After the password tab window, two folder of the notebooks on the left of webpag
 
 ## Contact Us
 -------------
-if you are facing any issues, feel free to contact us at info@embedinn.com or at Discord https://discord.gg/HCZM6msqS6
+if you are facing any issues, feel free to contact us at info@embedinn.com or at Discord https://discord.gg/kzxS8gsv7D
