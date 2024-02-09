@@ -18,7 +18,7 @@ This small guide will help you setup your board to get started with the jupyter 
 To flash iotSDR Micro-SD card follow the below steps:
 
   1. Download the appropriate iotSDR image for your board
-  2. Click here for [iotSDR7010](https://bit.ly/2PEP3Y4) or [iotSDR7020](https://bit.ly/3cxjA33)
+  2. Click here for [iotSDR7010](https://drive.google.com/file/d/1KvhfKxierGDetbQY9Esg8TNZ2M34TprH/view?usp=sharing) or [iotSDR7020](https://bit.ly/3cxjA33)
   4. Use Etcher Utility [Etcher](https://www.balena.io/etcher/)
   5. following the Etcher instructions Write the image to a blank Micro SD card (16GB recommended)
    
