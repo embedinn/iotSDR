@@ -3,6 +3,9 @@
 supported Version: Vivado 2019.1
 
 ## Generate Vivado Project
+
+    make sure to add board files into Vivado from vivado_boards_files directory, otherwise tcl script will through errors
+    
     $ git clone  https://github.com/archy-embedinn/iotSDR_Platform.git
     $ cd iotSDR
 
